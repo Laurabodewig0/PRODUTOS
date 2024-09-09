@@ -3,16 +3,16 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 
-const adicionarAluguel = require('./adicionarAluguel')
-const listarAluguel = require('./listarAluguel')
-const atualizarAluguel = require('./atualizarAluguel')
-const removerAluguel = require('./removerAluguel')
+const adicionarProduto = require('./adicionarProduto')
+const listarProduto = require('./listarProduto')
+const atualizarProduto = require('./atualizarProduto')
+const removerProduto = require('./removerProduto')
 
 
-app.post('/adicionar',adicionarAluguel);
-app.get('/listar', listarAluguel);
-app.put('./atualizar', atualizarAluguel);
-app.delete('./remover', removerAluguel);
+app.post('/adicionar',adicionarProduto);
+app.get('/listar', listarProduto);
+app.put('/atualizar', atualizarProduto);
+app.delete('/remover/:id', removerProduto);
 
 app.get('/', (req, res) => {
 res.send('Servidor Express está funcionando!');
